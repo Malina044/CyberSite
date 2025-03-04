@@ -7,8 +7,11 @@
     <style>
         body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #121212; color: #fff; overflow-x: hidden; }
         header { background: linear-gradient(135deg, #ffffff, #dcdcdc); color: #121212; text-align: center; padding: 40px 20px; position: relative; }
-        .profile-img-container { display: flex; justify-content: center; margin-top: -40px; }
-        .profile-img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 5px solid; border-image-source: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5); border-image-slice: 1; }
+        nav { background: #1e1e1e; padding: 15px; text-align: center; position: sticky; top: 0; z-index: 1000; }
+        nav a { color: white; text-decoration: none; margin: 0 15px; font-size: 18px; font-weight: bold; transition: color 0.3s; }
+        nav a:hover { color: #feda75; }
+        .profile-img-container { display: flex; justify-content: center; margin-top: 20px; }
+        .profile-img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 5px solid transparent; background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5); padding: 5px; }
         .container { width: 80%; margin: auto; padding: 20px; }
         .section { background: #ffffff; color: #121212; padding: 20px; margin: 20px 0; border-radius: 10px; transition: transform 0.3s ease-in-out; }
         .section:hover { transform: scale(1.02); }
@@ -27,6 +30,12 @@
     </style>
 </head>
 <body>
+    <nav>
+        <a href="#services">Послуги</a>
+        <a href="#contact">Контакти</a>
+        <a href="#form">Заявка</a>
+    </nav>
+    
     <header class="fade-in">
         <h1>Юридична консультація</h1>
         <p>Кваліфікована допомога з усіх юридичних питань</p>
@@ -37,7 +46,7 @@
     </div>
     
     <div class="container fade-in">
-        <div class="section">
+        <div class="section" id="services">
             <h2>Наші послуги</h2>
             <div class="service">
                 <h3>Консультації з цивільного права</h3>
@@ -53,14 +62,14 @@
             </div>
         </div>
         
-        <div class="section">
+        <div class="section" id="contact">
             <h2>Зв'яжіться з нами</h2>
             <p>Телефон: +38 (XXX) XXX-XX-XX</p>
             <p>Email: info@yourlawfirm.com</p>
             <p>Адреса: Київ, вул. Центральна, 10</p>
         </div>
         
-        <div class="section">
+        <div class="section" id="form">
             <h3>Залиште заявку</h3>
             <form class="fade-in">
                 <input type="text" name="name" placeholder="Ваше ім'я" required><br>
