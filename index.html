@@ -3,196 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>M-Group IT Company</title>
-  <style>
-    /* General Styles */
-    body {
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      background: #0a0a0a;
-      color: #fff;
-      overflow-x: hidden;
-    }
-
-    a {
-      text-decoration: none;
-      color: #0ff;
-    }
-
-    /* Header */
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.8);
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      color: #0ff;
-    }
-
-    .logo span {
-      color: #f0f;
-    }
-
-    .nav a {
-      margin: 0 10px;
-    }
-
-    /* Hero Section */
-    .hero {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: url('https://via.placeholder.com/1920x1080/0a0a0a/0ff?text=Cyberpunk+Background') no-repeat center center/cover;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle, rgba(0, 255, 255, 0.2), transparent);
-      animation: pulse 5s infinite;
-    }
-
-    @keyframes pulse {
-      0% {
-        transform: scale(1);
-        opacity: 1;
-      }
-      100% {
-        transform: scale(1.5);
-        opacity: 0;
-      }
-    }
-
-    .neon-text {
-      font-size: 3rem;
-      color: #0ff;
-      text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
-      z-index: 1;
-    }
-
-    .neon-subtext {
-      font-size: 1.2rem;
-      margin: 20px 0;
-      z-index: 1;
-    }
-
-    .cta-button {
-      background: #f0f;
-      padding: 10px 20px;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      z-index: 1;
-    }
-
-    .cta-button:hover {
-      background: #0ff;
-    }
-
-    /* Animated Background Elements */
-    .hero .animated-lines {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      z-index: 0;
-    }
-
-    .line {
-      position: absolute;
-      width: 2px;
-      height: 100%;
-      background: rgba(0, 255, 255, 0.5);
-      animation: move-lines 10s linear infinite;
-    }
-
-    @keyframes move-lines {
-      0% {
-        transform: translateY(0);
-      }
-      100% {
-        transform: translateY(-100%);
-      }
-    }
-
-    /* Section Styles */
-    .section {
-      padding: 100px 20px;
-      text-align: center;
-      background: url('https://via.placeholder.com/1920x1080/1a1a1a/0ff?text=Section+Background') no-repeat center center/cover;
-    }
-
-    .neon-title {
-      font-size: 2.5rem;
-      color: #f0f;
-      text-shadow: 0 0 10px #f0f;
-    }
-
-    .service-card {
-      background: rgba(0, 0, 0, 0.9);
-      padding: 20px;
-      border: 1px solid #0ff;
-      border-radius: 10px;
-      margin: 10px;
-      display: inline-block;
-      box-shadow: 0 0 10px #0ff;
-    }
-
-    /* Contact Form */
-    .contact form {
-      max-width: 400px;
-      margin: 0 auto;
-    }
-
-    .contact input, .contact textarea, .contact button {
-      width: 100%;
-      margin-bottom: 10px;
-      padding: 10px;
-      border: 1px solid #0ff;
-      border-radius: 5px;
-      background: #1a1a1a;
-      color: #fff;
-    }
-
-    .contact button {
-      background: #f0f;
-      cursor: pointer;
-    }
-
-    /* Footer */
-    .footer {
-      text-align: center;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.8);
-    }
-  </style>
+  <title>Cyberpunk IT Company</title>
+  <link rel="stylesheet" href="style.css"> <!-- Подключаем внешний файл стилей -->
 </head>
 <body>
   <header class="header">
-    <div class="logo">M-Group<span>IT</span></div>
+    <div class="logo">Malins<span>GROUP</span></div>
     <nav class="nav">
-      <a href="#about">About Us</a>
-      <a href="#services">Services</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+      <a href="#about" class="nav-link" id="about-link">About Us</a>
+      <a href="#services" class="nav-link" id="services-link">Services</a>
+      <a href="#projects" class="nav-link" id="projects-link">Projects</a>
+      <a href="#contact" class="nav-link" id="contact-link">Contact</a>
+      <a href="https://malina044.github.io/CyberSite/legal-advice.html" class="nav-link" id="legal-advice-link">Legal Advice</a>
     </nav>
   </header>
 
@@ -202,21 +24,14 @@
       <p class="neon-subtext">Innovative solutions with a cyberpunk twist.</p>
       <a href="#about" class="cta-button">Learn More</a>
     </div>
-    <div class="animated-lines">
-      <div class="line" style="left: 10%; animation-duration: 8s;"></div>
-      <div class="line" style="left: 30%; animation-duration: 12s;"></div>
-      <div class="line" style="left: 50%; animation-duration: 10s;"></div>
-      <div class="line" style="left: 70%; animation-duration: 9s;"></div>
-      <div class="line" style="left: 90%; animation-duration: 11s;"></div>
-    </div>
   </section>
 
-  <section id="about" class="section about">
+  <section id="about" class="section">
     <h2 class="neon-title">About Us</h2>
     <p>We are a cutting-edge IT company blending technology and creativity to redefine the future.</p>
   </section>
 
-  <section id="services" class="section services">
+  <section id="services" class="section">
     <h2 class="neon-title">Our Services</h2>
     <div class="service-card">
       <h3>Web Development</h3>
@@ -232,12 +47,7 @@
     </div>
   </section>
 
-  <section id="projects" class="section projects">
-    <h2 class="neon-title">Our Projects</h2>
-    <p>Explore our portfolio of innovative solutions.</p>
-  </section>
-
-  <section id="contact" class="section contact">
+  <section id="contact" class="section">
     <h2 class="neon-title">Contact Us</h2>
     <form>
       <input type="text" placeholder="Your Name" required>
@@ -248,7 +58,16 @@
   </section>
 
   <footer class="footer">
-    <p>&copy; 2025 Cyberpunk IT Company. All Rights Reserved.</p>
+    <p>&copy; 2024 Malins Group. All Rights Reserved.</p>
   </footer>
+
+  <script>
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', function () {
+        document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
 </body>
 </html>
