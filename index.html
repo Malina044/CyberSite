@@ -42,7 +42,7 @@
     }
 
     .nav a {
-      margin: 0 50px;
+      margin: 0 10px;
     }
 
     /* Hero Section */
@@ -78,21 +78,17 @@
       }
     }
 
-    .hero-content {
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-
     .neon-text {
       font-size: 3rem;
       color: #0ff;
       text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+      z-index: 1;
     }
 
     .neon-subtext {
       font-size: 1.2rem;
       margin: 20px 0;
+      z-index: 1;
     }
 
     .cta-button {
@@ -102,17 +98,46 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
+      z-index: 1;
     }
 
     .cta-button:hover {
       background: #0ff;
     }
 
-    /* Sections */
+    /* Animated Background Elements */
+    .hero .animated-lines {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .line {
+      position: absolute;
+      width: 2px;
+      height: 100%;
+      background: rgba(0, 255, 255, 0.5);
+      animation: move-lines 10s linear infinite;
+    }
+
+    @keyframes move-lines {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-100%);
+      }
+    }
+
+    /* Section Styles */
     .section {
       padding: 100px 20px;
       text-align: center;
-      background: rgba(26, 26, 26, 0.9);
+      background: url('https://via.placeholder.com/1920x1080/1a1a1a/0ff?text=Section+Background') no-repeat center center/cover;
     }
 
     .neon-title {
@@ -132,41 +157,24 @@
     }
 
     /* Contact Form */
-    .contact-form {
-      max-width: 500px;
+    .contact form {
+      max-width: 400px;
       margin: 0 auto;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.9);
-      border: 2px solid #0ff;
-      box-shadow: 0 0 15px #0ff;
-      border-radius: 10px;
     }
 
-    .contact-form input, .contact-form textarea {
+    .contact input, .contact textarea, .contact button {
       width: 100%;
+      margin-bottom: 10px;
       padding: 10px;
-      margin: 10px 0;
       border: 1px solid #0ff;
-      background: #111;
-      color: #0ff;
       border-radius: 5px;
-    }
-
-    .contact-form button {
-      width: 100%;
-      padding: 10px;
-      background: #f0f;
-      border: none;
+      background: #1a1a1a;
       color: #fff;
-      font-size: 1rem;
-      cursor: pointer;
-      box-shadow: 0 0 10px #f0f;
-      transition: 0.3s;
     }
 
-    .contact-form button:hover {
-      background: #0ff;
-      box-shadow: 0 0 15px #0ff;
+    .contact button {
+      background: #f0f;
+      cursor: pointer;
     }
 
     /* Footer */
@@ -179,19 +187,59 @@
 </head>
 <body>
   <header class="header">
-    <div class="logo">Malins<span>GROUP</span></div>
+    <div class="logo">CYBER<span>PUNK</span></div>
     <nav class="nav">
       <a href="#about">About Us</a>
       <a href="#services">Services</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
-      <a href="https://malina044.github.io/CyberSite/legal-advice.html">Legal Advice</a>
     </nav>
   </header>
 
-  <section id="contact" class="section">
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <h1 class="neon-text">Welcome to the Future of IT</h1>
+      <p class="neon-subtext">Innovative solutions with a cyberpunk twist.</p>
+      <a href="#about" class="cta-button">Learn More</a>
+    </div>
+    <div class="animated-lines">
+      <div class="line" style="left: 10%; animation-duration: 8s;"></div>
+      <div class="line" style="left: 30%; animation-duration: 12s;"></div>
+      <div class="line" style="left: 50%; animation-duration: 10s;"></div>
+      <div class="line" style="left: 70%; animation-duration: 9s;"></div>
+      <div class="line" style="left: 90%; animation-duration: 11s;"></div>
+    </div>
+  </section>
+
+  <section id="about" class="section about">
+    <h2 class="neon-title">About Us</h2>
+    <p>We are a cutting-edge IT company blending technology and creativity to redefine the future.</p>
+  </section>
+
+  <section id="services" class="section services">
+    <h2 class="neon-title">Our Services</h2>
+    <div class="service-card">
+      <h3>Web Development</h3>
+      <p>Custom websites with futuristic designs.</p>
+    </div>
+    <div class="service-card">
+      <h3>AI Solutions</h3>
+      <p>Advanced AI systems for modern businesses.</p>
+    </div>
+    <div class="service-card">
+      <h3>Cybersecurity</h3>
+      <p>Protect your data with state-of-the-art security.</p>
+    </div>
+  </section>
+
+  <section id="projects" class="section projects">
+    <h2 class="neon-title">Our Projects</h2>
+    <p>Explore our portfolio of innovative solutions.</p>
+  </section>
+
+  <section id="contact" class="section contact">
     <h2 class="neon-title">Contact Us</h2>
-    <form class="contact-form">
+    <form>
       <input type="text" placeholder="Your Name" required>
       <input type="email" placeholder="Your Email" required>
       <textarea placeholder="Your Message" required></textarea>
@@ -200,7 +248,7 @@
   </section>
 
   <footer class="footer">
-    <p>&copy; 2024 Malins Group. All Rights Reserved.</p>
+    <p>&copy; 2024 Cyberpunk IT Company. All Rights Reserved.</p>
   </footer>
 </body>
 </html>
