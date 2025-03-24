@@ -267,3 +267,24 @@ a {
 .contact-form button:hover {
   background: #0ff;
 }
+.about-images {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.about-images img {
+  width: 150px; /* Установите нужный размер */
+  height: 150px; /* Делаем их одинаковыми */
+  object-fit: cover; /* Обрезка изображения, чтобы оно заполняло круг */
+  border-radius: 50%; /* Делаем изображения круглыми */
+  border: 3px solid #0ff; /* Добавляем неоновую обводку */
+  box-shadow: 0 0 10px #0ff;
+  transition: transform 0.3s ease-in-out;
+}
+
+.about-images img:hover {
+  transform: scale(1.1); /* Легкое увеличение при наведении */
+}
